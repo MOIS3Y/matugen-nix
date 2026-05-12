@@ -1,9 +1,4 @@
-# Ignore build outputs from performing a nix-build or `nix build` command
+.direnv/
 result
 result-*
-
-# Ignore automatically generated direnv output
-.direnv
-
-# Ignore NixOS interactive test driver history
-**/.nixos-test-history
+docs/book/

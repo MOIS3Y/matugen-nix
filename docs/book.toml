@@ -1,0 +1,12 @@
+[book]
+authors = ["Stepan Zhukovsky"]
+language = "en"
+src = "src"
+title = "Matugen-nix Documentation"
+
+[output.html]
+git-repository-url = "https://github.com/MOIS3Y/matugen-nix"
+edit-url-template = "https://github.com/MOIS3Y/matugen-nix/edit/main/docs/{path}"
+preferred-dark-theme = "macchiato"
+additional-css = ["theme/catppuccin.css"]
+theme = "theme"
