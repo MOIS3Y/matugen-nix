@@ -44,7 +44,7 @@ jobs:
         uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           # mdbook builds to docs/book by default based on book.toml
           path: 'docs/book'
