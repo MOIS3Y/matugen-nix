@@ -10,7 +10,7 @@ let
 
   matugenArgs =
     if cfg.wallpaper != null then
-      "image \"${cfg.wallpaper}\""
+      ''image "${cfg.wallpaper}" --prefer ${cfg.prefer} --include-image-in-json false''
     else if cfg.seedColor != null then
       "color hex \"${cfg.seedColor}\""
     else
@@ -111,6 +111,22 @@ in
       ];
       default = "tonal-spot";
       description = "Matugen generation scheme to use.";
+    };
+
+    prefer = lib.mkOption {
+      type = lib.types.enum [
+        "darkness"
+        "lightness"
+        "saturation"
+        "less-saturation"
+        "value"
+      ];
+      default = "value";
+      description = ''
+        Strategy used to select a source color when multiple colors are
+        extracted from a wallpaper. This makes wallpaper generation
+        deterministic in non-interactive Nix builds.
+      '';
     };
 
     customColors = lib.mkOption {

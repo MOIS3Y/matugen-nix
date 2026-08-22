@@ -40,6 +40,12 @@ The module provides several options to control how the theme is generated.
 - **Default**: `"tonal-spot"`
 - The generation algorithm used by matugen.
 
+### `matugen.prefer`
+- **Type**: Enum (`"darkness"`, `"lightness"`, `"saturation"`, `"less-saturation"`, `"value"`)
+- **Default**: `"value"`
+- Selects which source color to use when a wallpaper contains multiple suitable
+  colors. This prevents an interactive prompt during Nix evaluation.
+
 ### `matugen.customColors`
 - **Type**: Attribute Set
 - **Default**: `{ }`
@@ -55,6 +61,7 @@ matugen = {
   enable = true;
   wallpaper = ./wallpapers/background.png;
   mode = "dark";
+  prefer = "saturation";
 };
 ```
 
